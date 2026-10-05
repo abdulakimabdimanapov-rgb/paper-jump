@@ -243,21 +243,32 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwcgs"]
+radius = 23.214283
+height = 78.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwcgs"]
+size = Vector2(1933, 87)
+
 [node name="Main" type="Node2D" unique_id=1329959460]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1840527132]
+script = ExtResource("6_4c57u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=834617768]
-position = Vector2(37, 50)
+position = Vector2(65.75, 540.83826)
+scale = Vector2(1.03125, 0.9117647)
 sprite_frames = SubResource("SpriteFrames_v0mhk")
 animation = &"run"
-frame = 2
-frame_progress = 0.013780189
 offset = Vector2(8, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2111252710]
-position = Vector2(-1, -1)
+position = Vector2(75, 542.5)
 scale = Vector2(1.12, 1)
-script = ExtResource("6_4c57u")
-speed = null
-jump_velocity = null
+shape = SubResource("CapsuleShape2D_vwcgs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=964369254]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1411881195]
+position = Vector2(533.5, 681.5)
+shape = SubResource("RectangleShape2D_vwcgs")
